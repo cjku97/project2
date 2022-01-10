@@ -78,7 +78,7 @@ class BFSTree:
 
 		
 					
-
+""" 
 G = Graph("./data/tiny_network.adjlist")
 print(G.bfs("Lani Wu"))
 print(G.bfs("Lani Wu", "Steven Altschuler"))
@@ -89,4 +89,4 @@ print(B.shortest_path("Steven Altschuler"))
 
 # F = BFSTree(G, "Carolyn Ku")
 # B.shortest_path("Carolyn Ku")
-
+"""

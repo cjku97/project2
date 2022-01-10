@@ -14,7 +14,7 @@ def test_bfs_traversal():
     G = Graph("./data/tiny_network.adjlist")
     B = G.bfs("Lani Wu")
     assert len(B) == 30
-    assert G.bfs == ['Lani Wu', '32042149', '32036252', '31806696', '30727954', 
+    assert B == ['Lani Wu', '32042149', '32036252', '31806696', '30727954', 
     	'Hani Goodarzi', 'Steven Altschuler', 'Luke Gilbert', 'Michael McManus', 
     	'33232663', '33483487', '31626775', '31540829', '32025019', '29700475', 
     	'Charles Chiu', 'Martin Kampmann', 'Neil Risch', 'Nevan Krogan', 'Atul Butte', 
@@ -33,4 +33,8 @@ def test_bfs():
     Include an additional test for nodes that are not connected 
     which should return None. 
     """
+    G = Graph("./data/tiny_network.adjlist")
+    B = G.bfs("Lani Wu", "Steven Altschuler")
+    assert len(B) == 3
+    assert B == ['Lani Wu', '32036252', 'Steven Altschuler']
     pass
