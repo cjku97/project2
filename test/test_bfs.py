@@ -36,3 +36,9 @@ def test_bfs():
     B = G.bfs("Lani Wu", "Steven Altschuler")
     assert len(B) == 3
     assert B == ['Lani Wu', '32036252', 'Steven Altschuler']
+    A = graph.Graph("./data/my_network.txt")
+    T = graph.BFSTree(A, "2")
+    assert T.shortest_path("5") == None
+    assert T.shortest_path("1") == ['2', '3', '1']
+    assert T.shortest_path("4") == ['2', '4']
+    assert T.traversal == ['2', '3', '4', '1']
