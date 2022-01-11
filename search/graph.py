@@ -59,7 +59,7 @@ class BFSTree:
 	
 	def shortest_path(self, end):
 		"""
-		Finds shortest path to end node
+		Returns shortest path to end node
 		"""
 		if not(self.graph.has_node(end)):
 			raise ValueError("End node not in graph")
