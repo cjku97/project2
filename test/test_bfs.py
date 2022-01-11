@@ -20,10 +20,7 @@ def test_bfs_traversal():
     	'Charles Chiu', 'Martin Kampmann', 'Neil Risch', 'Nevan Krogan', 'Atul Butte', 
     	'Michael Keiser', '33242416', '32790644', '34272374', '32353859', '30944313', 
     	'33765435', '31395880', 'Marina Sirota', '31486345']
-    bigGraph = graph.Graph("./data/citation_network.adjlist")
-    bigBFS = bigGraph.bfs("Charles Chiu")
-    assert len(bigBFS) <= 5120
-    assert bigGraph.bfs("Charles Chiu", "Elad Ziv") == ['Charles Chiu', '33658326', 'Nevan Krogan', '32353859', 'Elad Ziv']
+    
 
 def test_bfs():
     """
@@ -46,6 +43,11 @@ def test_bfs():
     assert T.shortest_path("1") == ['2', '3', '1']
     assert T.shortest_path("4") == ['2', '4']
     assert T.traversal == ['2', '3', '4', '1']
+    bigGraph = graph.Graph("./data/citation_network.adjlist")
+    bigBFS = bigGraph.bfs("Charles Chiu")
+    assert len(bigBFS) <= 5120
+    assert bigGraph.bfs("Charles Chiu", "Elad Ziv") == ['Charles Chiu', '33658326', 'Nevan Krogan', '32353859', 'Elad Ziv']
+    assert bigGraph.bfs("Hani Goodarzi", "Hani Goodarzi") == ["Hani Goodarzi"]
 
 def test_start_exception():
 	bigGraph = graph.Graph("./data/citation_network.adjlist")
